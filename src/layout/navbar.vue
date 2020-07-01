@@ -226,21 +226,193 @@
       <div class="content-item">
         <div class="content-left">
           <div class="content-noe">
-            <p>实现质的飞跃</p>
-            <p>需要有饭云餐饮系统</p>
+            <p>加入饭云</p>
+            <p>为智能餐饮贡献智慧</p>
           </div>
-          <div class="content-tow">
-            饭云智能餐饮系统能快速部署，数据无缝对接，快速上手
-            能处理各项经营场景和找出经营不足，业绩也明显提升
-            当然大家才更爱用
-          </div>
-          <div class="content-btn">免费注册</div>
+          <div class="content-btn">我要加入</div>
         </div>
         <div class="content-rg">
           <div class="demo-image__lazy">
-            <el-image :src="bg4" :lazy="true"></el-image>
+            <img :src="banner8" alt />
           </div>
         </div>
+      </div>
+      <div class="banner-bg">
+        <img :src="banner7" alt />
+      </div>
+    </div>
+    <div class="content" v-show="page_num==5">
+      <div class="content-item">
+        <div class="content-left">
+          <div class="content-noe">
+            <p>搜索获得帮助</p>
+            <div class="search">
+              <input type="text" placeholder="请输入关键字.." />
+              <div class="search-btn">搜索</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="banner-bg">
+        <img :src="banner9" alt />
+      </div>
+    </div>
+    <div class="content" v-show="page_num==6">
+      <div class="block">
+        <el-carousel :interval="40000" arrow="never" trigger="click" height="908px">
+          <el-carousel-item>
+            <div class="content-item">
+              <div class="content-left">
+                <div class="content-noe">
+                  <p>饭云餐饮收银系统</p>
+                  <p>不挑硬件平台</p>
+                  <p>电脑也可收银</p>
+                </div>
+                <div class="content-tow">3秒极速支付 聚合微信 支付宝 银联 Apple pay等多种支付方式让账单一目了然</div>
+                <div class="content-btn">免费下载</div>
+                <div class="content-foort">全面支持windows/安卓和iOS</div>
+              </div>
+              <div class="content-rg">
+                <div class="demo-image__lazy">
+                  <el-image :src="banner1" :lazy="true"></el-image>
+                </div>
+              </div>
+            </div>
+          </el-carousel-item>
+          <el-carousel-item>
+            <div class="content-item">
+              <div class="content-left">
+                <div class="content-noe">
+                  <p>FanYun AI 1X</p>
+                  <p>智能餐饮系统</p>
+                </div>
+                <div class="content-tow">3秒极速支付 聚合微信 支付宝 银联 Apple pay等多种支付方式让账单一目了然</div>
+                <div class="content-btn">免费下载</div>
+                <div class="content-foort">全面支持windows/安卓和iOS</div>
+              </div>
+              <div class="content-rg">
+                <div class="demo-image__lazy item_2">
+                  <el-image :src="banner2" :lazy="true"></el-image>
+                </div>
+              </div>
+            </div>
+          </el-carousel-item>
+          <el-carousel-item>
+            <div class="content-item">
+              <div class="content-left">
+                <div class="content-noe">
+                  <p>FanYun AI 1X</p>
+                  <p>智能餐饮系统</p>
+                </div>
+                <div class="content-tow">3秒极速支付 聚合微信 支付宝 银联 Apple pay等多种支付方式让账单一目了然</div>
+                <div class="content-btn">免费下载</div>
+                <div class="content-foort">全面支持windows/安卓和iOS</div>
+              </div>
+              <div class="content-rg">
+                <div class="demo-image__lazy item_3">
+                  <el-image :src="banner3" :lazy="true"></el-image>
+                </div>
+              </div>
+            </div>
+          </el-carousel-item>
+          <el-carousel-item>
+            <div class="content-item">
+              <div class="content-left">
+                <div class="content-noe">
+                  <p>FanYun AI 1X</p>
+                  <p>智能餐饮系统</p>
+                </div>
+                <div class="content-tow">3秒极速支付 聚合微信 支付宝 银联 Apple pay等多种支付方式让账单一目了然</div>
+                <div class="content-btn">免费下载</div>
+                <div class="content-foort">全面支持windows/安卓和iOS</div>
+              </div>
+              <div class="content-rg">
+                <div class="demo-image__lazy item_3">
+                  <el-image :src="banner4" :lazy="true"></el-image>
+                </div>
+              </div>
+            </div>
+          </el-carousel-item>
+        </el-carousel>
+      </div>
+    </div>
+    <div class="content" v-show="page_num==7">
+      <div class="block">
+        <el-carousel :interval="40000" arrow="never" trigger="click" height="908px">
+          <el-carousel-item>
+            <div class="content-item">
+              <div class="content-left">
+                <div class="content-noe">
+                  <p>饭云餐饮收银系统</p>
+                  <p>不挑硬件平台</p>
+                  <p>电脑也可收银</p>
+                </div>
+                <div class="content-tow">3秒极速支付 聚合微信 支付宝 银联 Apple pay等多种支付方式让账单一目了然</div>
+                <div class="content-btn">免费下载</div>
+                <div class="content-foort">全面支持windows/安卓和iOS</div>
+              </div>
+              <div class="content-rg">
+                <div class="demo-image__lazy">
+                  <el-image :src="banner1" :lazy="true"></el-image>
+                </div>
+              </div>
+            </div>
+          </el-carousel-item>
+          <el-carousel-item>
+            <div class="content-item">
+              <div class="content-left">
+                <div class="content-noe">
+                  <p>FanYun AI 1X</p>
+                  <p>智能餐饮系统</p>
+                </div>
+                <div class="content-tow">3秒极速支付 聚合微信 支付宝 银联 Apple pay等多种支付方式让账单一目了然</div>
+                <div class="content-btn">免费下载</div>
+                <div class="content-foort">全面支持windows/安卓和iOS</div>
+              </div>
+              <div class="content-rg">
+                <div class="demo-image__lazy item_2">
+                  <el-image :src="banner2" :lazy="true"></el-image>
+                </div>
+              </div>
+            </div>
+          </el-carousel-item>
+          <el-carousel-item>
+            <div class="content-item">
+              <div class="content-left">
+                <div class="content-noe">
+                  <p>FanYun AI 1X</p>
+                  <p>智能餐饮系统</p>
+                </div>
+                <div class="content-tow">3秒极速支付 聚合微信 支付宝 银联 Apple pay等多种支付方式让账单一目了然</div>
+                <div class="content-btn">免费下载</div>
+                <div class="content-foort">全面支持windows/安卓和iOS</div>
+              </div>
+              <div class="content-rg">
+                <div class="demo-image__lazy item_3">
+                  <el-image :src="banner3" :lazy="true"></el-image>
+                </div>
+              </div>
+            </div>
+          </el-carousel-item>
+          <el-carousel-item>
+            <div class="content-item">
+              <div class="content-left">
+                <div class="content-noe">
+                  <p>FanYun AI 1X</p>
+                  <p>智能餐饮系统</p>
+                </div>
+                <div class="content-tow">3秒极速支付 聚合微信 支付宝 银联 Apple pay等多种支付方式让账单一目了然</div>
+                <div class="content-btn">免费下载</div>
+                <div class="content-foort">全面支持windows/安卓和iOS</div>
+              </div>
+              <div class="content-rg">
+                <div class="demo-image__lazy item_3">
+                  <el-image :src="banner4" :lazy="true"></el-image>
+                </div>
+              </div>
+            </div>
+          </el-carousel-item>
+        </el-carousel>
       </div>
     </div>
   </div>
@@ -266,7 +438,9 @@ export default {
       banner4: require("../assets/banner4.png"),
       banner5: require("../assets/sucai2.png"),
       banner6: require("../assets/banner6.png"),
-      bg4: require("../assets/bg4.png"),
+      banner7: require("../assets/banner7.png"),
+      banner8: require("../assets/banner5.png"),
+      banner9: require("../assets/banner8.png"),
       page_num: 0,
       headclass: ""
     };
@@ -503,7 +677,7 @@ export default {
   .content-noe,
   .content-tow,
   .content-btn {
-    margin-left: 108px !important;
+    margin-left: 90px !important;
   }
   .content-item {
     display: flex;
@@ -644,15 +818,30 @@ export default {
       background: #15ab7d !important;
     }
   }
-  .content-left {
+  .content-noe,
+  .content-btn {
+    margin-left: 60px !important;
+    margin-right: 120px;
+  }
+  .content-item {
+    display: flex;
+    align-items: center;
+  }
+  .content-left,
+  .navbar {
     position: relative;
-    z-index: 1;
+    z-index: 2;
   }
   .content-rg {
-    position: absolute;
-    top: -158px;
-    left: 50%;
-    margin-left: -1000px;
+    margin-top: 148px;
+  }
+  .banner-bg {
+    img {
+      width: 100%;
+      position: absolute;
+      left: 0;
+      top: -141px;
+    }
   }
 }
 .head_5 {
@@ -677,6 +866,82 @@ export default {
   li {
     &:hover {
       background: #3dab15 !important;
+    }
+  }
+  .content-left,
+  .navbar {
+    position: relative;
+    z-index: 2;
+  }
+  .content-item {
+    display: flex;
+    justify-content: center;
+  }
+  .content-noe {
+    width: 733px;
+    height: 65px;
+    margin: 0 auto;
+    p {
+      font-size: 28px;
+      padding-left: 23px;
+      font-weight: bold;
+    }
+    .search {
+      border-radius: 40px;
+      width: 100%;
+      position: relative;
+      input {
+        width: 100%;
+        height: 65px;
+        border: #cfe2f5 4px solid;
+        border-radius: 40px;
+        color: #707070;
+        padding-left: 20px;
+        font-size: 20px;
+      }
+      .search-btn {
+        /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#75dcfa+0,74c1fc+100 */
+        background: rgb(117, 220, 250); /* Old browsers */
+        background: -moz-linear-gradient(
+          left,
+          rgba(117, 220, 250, 1) 0%,
+          rgba(116, 193, 252, 1) 100%
+        ); /* FF3.6-15 */
+        background: -webkit-linear-gradient(
+          left,
+          rgba(117, 220, 250, 1) 0%,
+          rgba(116, 193, 252, 1) 100%
+        ); /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(
+          to right,
+          rgba(117, 220, 250, 1) 0%,
+          rgba(116, 193, 252, 1) 100%
+        ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#75dcfa', endColorstr='#74c1fc',GradientType=1 ); /* IE6-9 */
+        width: 130px;
+        height: 65px;
+        position: absolute;
+        right: 0;
+        top: 0;
+        color: #fff;
+        font-size: 28px;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-top-right-radius: 40px;
+        border-bottom-right-radius: 40px;
+        border: #cfe2f5 4px solid;
+        cursor: pointer;
+      }
+    }
+  }
+  .banner-bg {
+    img {
+      width: 100%;
+      position: absolute;
+      left: 0;
+      top: -141px;
     }
   }
 }
@@ -704,6 +969,25 @@ export default {
       background: #f26e0e !important;
     }
   }
+  .content-noe,
+  .content-tow,
+  .content-btn {
+    margin-left: 90px !important;
+  }
+  .content-item {
+    display: flex;
+    align-items: flex-end;
+    .item_2 {
+      margin-left: 126px;
+      top: 20px;
+      position: relative;
+    }
+    .item_3 {
+      margin-left: 271px;
+      top: 30px;
+      position: relative;
+    }
+  }
 }
 .head_7 {
   /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#261188+0,06d6ea+100 */
@@ -729,5 +1013,38 @@ export default {
       background: #154cab !important;
     }
   }
+  .content-noe,
+  .content-tow,
+  .content-btn {
+    margin-left: 90px !important;
+  }
+  .content-item {
+    display: flex;
+    align-items: flex-end;
+    .item_2 {
+      margin-left: 126px;
+      top: 20px;
+      position: relative;
+    }
+    .item_3 {
+      margin-left: 271px;
+      top: 30px;
+      position: relative;
+    }
+  }
+}
+.el-carousel__button {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-left: 30px;
+  transition: 0.8s;
+  opacity: 1;
+}
+.el-carousel__indicator.is-active button {
+  opacity: 1;
+  width: 100px;
+  height: 12px;
+  border-radius: 12px;
 }
 </style>

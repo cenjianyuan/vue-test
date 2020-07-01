@@ -37,7 +37,9 @@ html {
 .digital-number {
   font-family: digital;
 }
-
+input{
+  outline:none
+}
 *,
 *:before,
 *:after {
