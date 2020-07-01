@@ -3,7 +3,7 @@
     <div class="navbar content">
       <div class="navbar-left">
         <img src="@/assets/logo.png" />
-        <h4>信云智能科技</h4>
+        <h4>饭云智能科技</h4>
       </div>
       <div>
         <ul class="nav-wrap">
@@ -103,8 +103,144 @@
                 </div>
               </div>
             </div>
-          </el-carousel-item>          
+          </el-carousel-item>
         </el-carousel>
+      </div>
+    </div>
+    <div class="content nav_2_btn" v-show="page_num==2">
+      <div class="block">
+        <el-carousel :interval="40000" arrow="never" trigger="click" height="908px">
+          <el-carousel-item>
+            <div class="content-item">
+              <div class="content-left">
+                <div class="content-noe">
+                  <p>饭云智能餐饮系统</p>
+                  <p>中餐运营效率解决方案</p>
+                </div>
+                <div class="content-tow">
+                  饭云智能餐饮系统多平台统一设计，采用扁
+                  平化界面并重新设计功能布局， 更支持触屏
+                  操作，为您快速提升收银效率。从传统餐饮
+                  系统快速转换再无不适感。
+                </div>
+                <div class="content-btn">饭云智能收银系统</div>
+              </div>
+              <div class="content-rg">
+                <div class="demo-image__lazy">
+                  <el-image :src="banner5" :lazy="true"></el-image>
+                </div>
+              </div>
+            </div>
+          </el-carousel-item>
+          <el-carousel-item>
+            <div class="content-item">
+              <div class="content-left">
+                <div class="content-noe">
+                  <p>饭云智能餐饮系统</p>
+                  <p>中餐运营效率解决方案</p>
+                </div>
+                <div class="content-tow">
+                  饭云智能餐饮系统多平台统一设计，采用扁
+                  平化界面并重新设计功能布局， 更支持触屏
+                  操作，为您快速提升收银效率。从传统餐饮
+                  系统快速转换再无不适感。
+                </div>
+                <div class="content-btn">饭云智能收银系统</div>
+              </div>
+              <div class="content-rg">
+                <div class="demo-image__lazy">
+                  <el-image :src="banner5" :lazy="true"></el-image>
+                </div>
+              </div>
+            </div>
+          </el-carousel-item>
+          <el-carousel-item>
+            <div class="content-item">
+              <div class="content-left">
+                <div class="content-noe">
+                  <p>饭云智能餐饮系统</p>
+                  <p>中餐运营效率解决方案</p>
+                </div>
+                <div class="content-tow">
+                  饭云智能餐饮系统多平台统一设计，采用扁
+                  平化界面并重新设计功能布局， 更支持触屏
+                  操作，为您快速提升收银效率。从传统餐饮
+                  系统快速转换再无不适感。
+                </div>
+                <div class="content-btn">饭云智能收银系统</div>
+              </div>
+              <div class="content-rg">
+                <div class="demo-image__lazy">
+                  <el-image :src="banner5" :lazy="true"></el-image>
+                </div>
+              </div>
+            </div>
+          </el-carousel-item>
+          <el-carousel-item>
+            <div class="content-item">
+              <div class="content-left">
+                <div class="content-noe">
+                  <p>饭云智能餐饮系统</p>
+                  <p>中餐运营效率解决方案</p>
+                </div>
+                <div class="content-tow">
+                  饭云智能餐饮系统多平台统一设计，采用扁
+                  平化界面并重新设计功能布局， 更支持触屏
+                  操作，为您快速提升收银效率。从传统餐饮
+                  系统快速转换再无不适感。
+                </div>
+                <div class="content-btn">饭云智能收银系统</div>
+              </div>
+              <div class="content-rg">
+                <div class="demo-image__lazy">
+                  <el-image :src="banner5" :lazy="true"></el-image>
+                </div>
+              </div>
+            </div>
+          </el-carousel-item>
+        </el-carousel>
+      </div>
+    </div>
+    <div class="content" v-show="page_num==3">
+      <div class="content-item">
+        <div class="content-left">
+          <div class="content-noe">
+            <p>实现质的飞跃</p>
+            <p>需要有饭云餐饮系统</p>
+          </div>
+          <div class="content-tow">
+            饭云智能餐饮系统能快速部署，数据无缝对接，快速上手
+            能处理各项经营场景和找出经营不足，业绩也明显提升
+            当然大家才更爱用
+          </div>
+          <div class="content-btn">免费注册</div>
+        </div>
+        <div class="content-rg">
+          <div class="demo-image__lazy">
+            <el-image :src="banner6" :lazy="true"></el-image>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="content" v-show="page_num==4">
+      <div class="content-item">
+        <div class="content-left">
+          <div class="content-noe">
+            <p>实现质的飞跃</p>
+            <p>需要有饭云餐饮系统</p>
+          </div>
+          <div class="content-tow">
+            饭云智能餐饮系统能快速部署，数据无缝对接，快速上手
+            能处理各项经营场景和找出经营不足，业绩也明显提升
+            当然大家才更爱用
+          </div>
+          <div class="content-btn">免费注册</div>
+        </div>
+        <div class="content-rg">
+          <div class="demo-image__lazy">
+            <el-image :src="bg4" :lazy="true"></el-image>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -128,6 +264,9 @@ export default {
       banner2: require("../assets/banner2.png"),
       banner3: require("../assets/banner3.png"),
       banner4: require("../assets/banner4.png"),
+      banner5: require("../assets/sucai2.png"),
+      banner6: require("../assets/banner6.png"),
+      bg4: require("../assets/bg4.png"),
       page_num: 0,
       headclass: ""
     };
@@ -361,6 +500,11 @@ export default {
       background: #01a7ba !important;
     }
   }
+  .content-noe,
+  .content-tow,
+  .content-btn {
+    margin-left: 108px !important;
+  }
   .content-item {
     display: flex;
     align-items: flex-end;
@@ -400,6 +544,39 @@ export default {
       background: #9d79ff !important;
     }
   }
+  .content-noe,
+  .content-tow,
+  .content-btn,
+  .content-foort {
+    margin-left: 0 !important;
+  }
+  .content-noe {
+    width: 440px;
+  }
+  .content-item {
+    display: flex;
+    align-items: flex-end;
+  }
+  .nav_2_btn .content-btn {
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#b59bff+0,9873ff+100 */
+    background: rgb(181, 155, 255); /* Old browsers */
+    background: -moz-linear-gradient(
+      left,
+      rgba(181, 155, 255, 1) 0%,
+      rgba(152, 115, 255, 1) 100%
+    ); /* FF3.6-15 */
+    background: -webkit-linear-gradient(
+      left,
+      rgba(181, 155, 255, 1) 0%,
+      rgba(152, 115, 255, 1) 100%
+    ); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(
+      to right,
+      rgba(181, 155, 255, 1) 0%,
+      rgba(152, 115, 255, 1) 100%
+    ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b59bff', endColorstr='#9873ff',GradientType=1 ); /* IE6-9 */
+  }
 }
 .head_3 {
   /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#b93fb2+0,b78cf2+100 */
@@ -425,6 +602,23 @@ export default {
       background: #ba3fb1 !important;
     }
   }
+  .content-left {
+    position: relative;
+    z-index: 1;
+  }
+  .content-rg {
+    position: absolute;
+    top: 275px;
+    left: 50%;
+    margin-left: -876px;
+  }
+
+  .content-noe,
+  .content-tow,
+  .content-btn,
+  .content-foort {
+    margin-left: 112px !important;
+  }
 }
 .head_4 {
   /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#11b280+0,1cbdae+100 */
@@ -449,6 +643,16 @@ export default {
     &:hover {
       background: #15ab7d !important;
     }
+  }
+  .content-left {
+    position: relative;
+    z-index: 1;
+  }
+  .content-rg {
+    position: absolute;
+    top: -158px;
+    left: 50%;
+    margin-left: -1000px;
   }
 }
 .head_5 {
