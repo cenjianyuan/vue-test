@@ -7,7 +7,14 @@
       </div>
       <div>
         <ul class="nav-wrap">
-          <li v-for="item in navs" :key="item.name" class="nav clearfix" @click="mypath(item.page)">
+          <li
+            v-for="item in navs"
+            :key="item.name"
+            class="nav"
+            @click="mypath(item.page)"
+            @mouseenter="enter(item.page)"
+            @mouseleave="leave()"
+          >
             <router-link :to="item.path">{{item.name}}</router-link>
           </li>
         </ul>
@@ -28,6 +35,9 @@
       <div class="content-btn">免费下载</div>
       <div class="content-foort">全面支持windows/安卓和iOS</div>
     </div>
+    <Program></Program>
+    <Section></Section>
+
     <div class="content" v-show="page_num==1">
       <div class="block">
         <el-carousel :interval="40000" arrow="never" trigger="click" height="908px">
@@ -419,6 +429,9 @@
 </template>
 
 <script>
+import Section from "./section";
+import Program from "./program";
+
 export default {
   data() {
     return {
@@ -441,24 +454,34 @@ export default {
       banner7: require("../assets/banner7.png"),
       banner8: require("../assets/banner5.png"),
       banner9: require("../assets/banner8.png"),
+      ico1: require("../assets/ico/serve/1.png"),
       page_num: 0,
-      headclass: ""
+      headclass: "",
+      lanmu: ""
     };
   },
   ready() {},
   methods: {
     mypath(page) {
       let self = this;
-      console.log(page);
       this.page_num = page;
+      let show_id = document.getElementsByClassName("section")[0];
+      let program = document.getElementsByClassName("program")[0];
+
       if (page == 0) {
         this.headclass = "";
+        show_id.className = "section ht_1";
+        program.className = "program ht_1";
       }
       if (page == 1) {
         this.headclass = "head_1";
+        show_id.className = "section ht_2";
+        program.className = "program ht_2";
       }
       if (page == 2) {
         this.headclass = "head_2";
+        show_id.className = "section ht_3";
+        program.className = "program ht_3";
       }
       if (page == 3) {
         this.headclass = "head_3";
@@ -475,37 +498,68 @@ export default {
       if (page == 7) {
         this.headclass = "head_7";
       }
+    },
+    enter(index) {
+      let show_id = document.getElementsByClassName("section")[0];
+      let program = document.getElementsByClassName("program")[0];
+
+      if (index == 1 || index == 2) {
+        if (index == 1) {
+          program.style.transition = "all 0s";
+          show_id.style.transition = "all 0.5s";
+          program.style.height = "0";
+          show_id.style.height = "240px";
+        } else {
+          show_id.style.transition = "all 0s";
+          program.style.transition = "all 0.5s";
+          show_id.style.height = "0";
+          program.style.height = "240px";
+        }
+      } else {
+        show_id.style.transition = "all 0s";
+        program.style.transition = "all 0s";
+        show_id.style.height = "0";
+        program.style.height = "0";
+      }
+    },
+    leave() {
+      console.log("移除");
     }
   },
-  components: {},
-  beforeCreate() {
-    console.log(this.page_num);
-    console.group("------beforeCreate创建前状态------");
-  },
-  created() {
-    console.log(this.page_num);
-    console.group("------created创建完毕状态------");
-  },
-  beforeMount() {
-    console.log(this.page_num);
-    console.group("------beforeMount挂载前状态------");
-  },
-  mounted() {
-    console.log(this.page_num);
-    console.group("------mounted 挂载结束状态------");
-  },
-  beforeUpdate() {
-    console.group("beforeUpdate 更新前状态===============》");
-  },
-  updated() {
-    console.group("updated 更新完成状态===============》");
-  },
-  beforeDestroy() {
-    console.group("beforeDestroy 销毁前状态===============》");
-  },
-  destroyed() {
-    console.group("destroyed 销毁完成状态===============》");
+  components: {
+    Section,
+    Program
   }
+  /*
+    beforeCreate() {
+      console.log(this.page_num);
+      console.group("------beforeCreate创建前状态------");
+    },
+    created() {
+      console.log(this.page_num);
+      console.group("------created创建完毕状态------");
+    },
+    beforeMount() {
+      console.log(this.page_num);
+      console.group("------beforeMount挂载前状态------");
+    },
+    mounted() {
+      console.log(this.page_num);
+      console.group("------mounted 挂载结束状态------");
+    },
+    beforeUpdate() {
+      console.group("beforeUpdate 更新前状态===============》");
+    },
+    updated() {
+      console.group("updated 更新完成状态===============》");
+    },
+    beforeDestroy() {
+      console.group("beforeDestroy 销毁前状态===============》");
+    },
+    destroyed() {
+      console.group("destroyed 销毁完成状态===============》");
+    } 
+  */
 };
 </script>
 <style lang="scss" scoped>
@@ -513,6 +567,17 @@ export default {
   width: 1300px;
   margin: 0 auto;
 }
+
+.hover {
+  background: #093b90;
+  border-radius: 8px;
+  &:nth-child(2),
+  &:nth-child(3) {
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+  }
+}
+
 .head {
   background: url("../assets/index-top.png") no-repeat;
   height: 1080px;
@@ -537,9 +602,14 @@ export default {
         text-align: center;
         &:hover {
           background: #093b90;
-          font-weight: bold;
+          // font-weight: bold;
           cursor: pointer;
           border-radius: 8px;
+          &:nth-child(2),
+          &:nth-child(3) {
+            border-bottom-left-radius: 0px;
+            border-bottom-right-radius: 0px;
+          }
         }
       }
     }
@@ -587,20 +657,20 @@ export default {
     .content-noe {
       font-size: 44px;
       margin-top: 218px;
-      margin-left: 116px;
+      margin-left: 90px;
       p {
         margin-bottom: 18px;
       }
     }
     .content-tow {
-      margin-left: 116px;
+      margin-left: 90px;
       font-size: 18px;
       margin-top: 32px;
       width: 338px;
       line-height: initial;
     }
     .content-btn {
-      margin-left: 116px;
+      margin-left: 90px;
       width: 298px;
       height: 62px;
       text-align: center;
@@ -630,7 +700,7 @@ export default {
     }
     .content-foort {
       margin-top: 16px;
-      margin-left: 116px;
+      margin-left: 90px;
       width: 298px;
       text-align: center;
       color: #5be3ee;
@@ -638,6 +708,7 @@ export default {
     }
   }
 }
+
 .head_1 {
   /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#1592e6+0,016b8f+0,016b8e+0,01dae0+99,01dae0+100,1592e6+100 */
   background: rgb(21, 146, 230); /* Old browsers */
