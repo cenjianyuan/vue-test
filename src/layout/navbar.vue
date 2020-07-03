@@ -540,7 +540,7 @@ export default {
       }
     },
     leave() {
-      console.log("移除");
+      // console.log("移除");
     }
   },
   components: {
