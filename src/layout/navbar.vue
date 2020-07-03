@@ -485,41 +485,58 @@ export default {
       }
       if (page == 3) {
         this.headclass = "head_3";
+        show_id.className = "section ht_4";
+        program.className = "program ht_4";
       }
       if (page == 4) {
         this.headclass = "head_4";
+        show_id.className = "section ht_5";
+        program.className = "program ht_5";
       }
       if (page == 5) {
         this.headclass = "head_5";
+        show_id.className = "section ht_6";
+        program.className = "program ht_6";
       }
       if (page == 6) {
         this.headclass = "head_6";
+        show_id.className = "section ht_7";
+        program.className = "program ht_7";
       }
       if (page == 7) {
         this.headclass = "head_7";
+        show_id.className = "section ht_8";
+        program.className = "program ht_8";
       }
     },
     enter(index) {
       let show_id = document.getElementsByClassName("section")[0];
       let program = document.getElementsByClassName("program")[0];
-
+      let nav_2 = document.getElementsByClassName("nav")[1];
+      let nav_3 = document.getElementsByClassName("nav")[2];
       if (index == 1 || index == 2) {
         if (index == 1) {
           program.style.transition = "all 0s";
           show_id.style.transition = "all 0.5s";
           program.style.height = "0";
           show_id.style.height = "240px";
+          nav_2.className = "nav hover hover_" + this.page_num;
+          nav_3.className = "nav";
         } else {
           show_id.style.transition = "all 0s";
           program.style.transition = "all 0.5s";
           show_id.style.height = "0";
           program.style.height = "240px";
+          nav_2.className = "nav";
+          nav_3.className = "nav hover hover_" + this.page_num;
         }
       } else {
         show_id.style.transition = "all 0s";
         program.style.transition = "all 0s";
         show_id.style.height = "0";
         program.style.height = "0";
+        nav_2.className = "nav";
+        nav_3.className = "nav";
       }
     },
     leave() {
@@ -576,6 +593,30 @@ export default {
     border-bottom-left-radius: 0px;
     border-bottom-right-radius: 0px;
   }
+}
+.hover_0 {
+  background: #093b90;
+}
+.hover_1 {
+  background: #01a7ba;
+}
+.hover_2 {
+  background: #9d79ff;
+}
+.hover_3 {
+  background: #ba3fb1;
+}
+.hover_4 {
+  background: #15ab7d;
+}
+.hover_5 {
+  background: #3dab15;
+}
+.hover_6 {
+  background: #f26e0e;
+}
+.hover_7 {
+  background: #154cab;
 }
 
 .head {

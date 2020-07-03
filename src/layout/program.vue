@@ -1,5 +1,5 @@
 <template>
-  <div class="program">
+  <div class="program ht_1">
     <div class="line">
       <span></span>
       <span></span>
@@ -87,7 +87,7 @@
   height: 0px;
   overflow: hidden;
   color: #fff;
-
+  z-index: 3;
   .line {
     width: 1300px;
     margin: 0 auto;
@@ -149,8 +149,8 @@
             margin-left: 3px;
             margin-bottom: 2px;
             cursor: pointer;
-            &:hover{
-               background: #9d79fd; 
+            &:hover {
+              background: #9d79fd;
             }
             span {
               margin-left: 7px;
@@ -174,7 +174,7 @@
     }
   }
   .box {
-    background: rgba(28, 45, 161, 0.8) !important;
+    background: rgba(0, 0, 0, 0.2) !important;
     .lines {
       background: #00e5ff !important;
     }
@@ -189,75 +189,58 @@
 .ht_2 {
   .line {
     span {
-      background: #01a7ba ;
+      background: #01a7ba;
     }
   }
   .box {
-    background: rgba(0,94,114,0.8) !important;
+    background: rgba(0, 0, 0, 0.2) !important;
     .lines {
       background: #00e5ff !important;
     }
     .lanmu-c {
-      background: #184caf !important;
+      background: #007a8a !important;
       &:hover {
-        background: #093b90 !important;
+        background: #01a7ba !important;
       }
     }
   }
 }
-.ht_2 {
-  .line {
-    span {
-      background: #9d79ff  ;
-    }
-  }
-  .box {
-    background: rgba(0,94,114,0.8) !important;
-    .lines {
-      background: #00e5ff !important;
-    }
-    .lanmu-c {
-      background: #184caf !important;
-      &:hover {
-        background: #093b90 !important;
-      }
-    }
-  }
-}
+
 .ht_3 {
   .line {
     span {
-      background: #01a7ba ;
+      background: #9d79ff;
     }
   }
   .box {
-    background: rgba(0,94,114,0.8) !important;
+    background: rgba(0, 0, 0, 0.2) !important;
     .lines {
-      background: #00e5ff !important;
+      background: #9e7bfb !important;
     }
     .lanmu-c {
-      background: #184caf !important;
+      background: #5e41ad !important;
       &:hover {
-        background: #093b90 !important;
+        background: #9d79fd !important;
       }
     }
   }
 }
+
 .ht_4 {
   .line {
     span {
-      background: #01a7ba ;
+      background: #ba3fb1;
     }
   }
   .box {
-    background: rgba(0,94,114,0.8) !important;
+    background: rgba(0, 0, 0, 0.2) !important;
     .lines {
-      background: #00e5ff !important;
+      background: #ca33b6 !important;
     }
     .lanmu-c {
-      background: #184caf !important;
+      background: #b962cd !important;
       &:hover {
-        background: #093b90 !important;
+        background: #b93fb1 !important;
       }
     }
   }
@@ -265,18 +248,18 @@
 .ht_5 {
   .line {
     span {
-      background: #01a7ba ;
+      background: #15ab7d;
     }
   }
   .box {
-    background: rgba(0,94,114,0.8) !important;
+    background: rgba(0, 0, 0, 0.2) !important;
     .lines {
-      background: #00e5ff !important;
+      background: #11b280 !important;
     }
     .lanmu-c {
-      background: #184caf !important;
+      background: #53d6b0 !important;
       &:hover {
-        background: #093b90 !important;
+        background: #15ab7d !important;
       }
     }
   }
@@ -284,11 +267,49 @@
 .ht_6 {
   .line {
     span {
-      background: #01a7ba ;
+      background: #3dab15;
     }
   }
   .box {
-    background: rgba(0,94,114,0.8) !important;
+    background: rgba(0, 0, 0, 0.2) !important;
+    .lines {
+      background: #55b93d !important;
+    }
+    .lanmu-c {
+      background: #63a719 !important;
+      &:hover {
+        background: #3dab15 !important;
+      }
+    }
+  }
+}
+.ht_7 {
+  .line {
+    span {
+      background: #f26e0e;
+    }
+  }
+  .box {
+    background: rgba(0, 0, 0, 0.2) !important;
+    .lines {
+      background: #d84035 !important;
+    }
+    .lanmu-c {
+      background: #f2971e !important;
+      &:hover {
+        background: #f26e0e !important;
+      }
+    }
+  }
+}
+.ht_8 {
+  .line {
+    span {
+      background: #154cab;
+    }
+  }
+  .box {
+    background: rgba(0, 0, 0, 0.2) !important;
     .lines {
       background: #00e5ff !important;
     }
