@@ -37,7 +37,9 @@
     </div>
     <Program></Program>
     <Section></Section>
-
+    <div>
+      <canvas id="canvas" style="position:absolute;left:0px;z-index:0;top: 85vh;"></canvas>
+    </div>
     <div class="content" v-show="page_num==1">
       <div class="block">
         <el-carousel :interval="40000" arrow="never" trigger="click" height="908px">
@@ -431,7 +433,7 @@
 <script>
 import Section from "./section";
 import Program from "./program";
-
+import $ from "jquery";
 export default {
   data() {
     return {
@@ -546,38 +548,112 @@ export default {
   components: {
     Section,
     Program
+  },
+  /**/
+  beforeCreate() {
+    console.log(this.page_num);
+    console.group("------beforeCreate创建前状态------");
+  },
+  created() {
+    console.log(this.page_num);
+    console.group("------created创建完毕状态------");
+  },
+  beforeMount() {
+    console.log(this.page_num);
+    console.group("------beforeMount挂载前状态------");
+  },
+  mounted() {
+    console.log(this.page_num);
+    console.group("------mounted 挂载结束状态------");
+    wave(this.page_num);
+  },
+  beforeUpdate() {
+    console.group("beforeUpdate 更新前状态===============》");
+  },
+  updated() {
+    console.group("updated 更新完成状态===============》");
+    wave(this.page_num);
+  },
+  beforeDestroy() {
+    console.group("beforeDestroy 销毁前状态===============》");
+  },
+  destroyed() {
+    console.group("destroyed 销毁完成状态===============》");
   }
-  /*
-    beforeCreate() {
-      console.log(this.page_num);
-      console.group("------beforeCreate创建前状态------");
-    },
-    created() {
-      console.log(this.page_num);
-      console.group("------created创建完毕状态------");
-    },
-    beforeMount() {
-      console.log(this.page_num);
-      console.group("------beforeMount挂载前状态------");
-    },
-    mounted() {
-      console.log(this.page_num);
-      console.group("------mounted 挂载结束状态------");
-    },
-    beforeUpdate() {
-      console.group("beforeUpdate 更新前状态===============》");
-    },
-    updated() {
-      console.group("updated 更新完成状态===============》");
-    },
-    beforeDestroy() {
-      console.group("beforeDestroy 销毁前状态===============》");
-    },
-    destroyed() {
-      console.group("destroyed 销毁完成状态===============》");
-    } 
-  */
 };
+
+function wave(index) {
+  console.log(index);
+
+  //顶部波浪
+  var canvas = document.getElementById("canvas");
+  var ctx = canvas.getContext("2d");
+
+  canvas.width = canvas.parentNode.offsetWidth;
+  canvas.height = "200";
+  //            改变浏览器大小时同时改变波浪
+  $(window).resize(function() {
+    canvas.width = canvas.parentNode.offsetWidth;
+    canvas.height = "200";
+    // loop();
+  });
+  //    canvas.height = canvas.parentNode.offsetHeight;
+  //如果浏览器支持requestAnimFrame则使用requestAnimFrame否则使用setTimeout
+  window.requestAnimFrame = (function() {
+    return (
+      window.requestAnimationFrame ||
+      window.webkitRequestAnimationFrame ||
+      window.mozRequestAnimationFrame ||
+      function(callback) {
+        window.setTimeout(callback, 1000 / 60);
+      }
+    );
+  })();
+  // 波浪大小
+  var boHeight = canvas.height / 5;
+  var posHeight = canvas.height / 2;
+  //初始角度为0
+  var step = 40;
+  //定义三条不同波浪的颜色
+  var anum = 2;
+  // 给每个页面加不同的颜色
+  for (var i = 0; i < anum; i++) {
+    var lines = [
+      "rgba(250,250,250, 1)",
+      "rgba(21,96,183, 0.5)",
+      "rgba(24,67,170, 0.6)"
+    ];
+    loop();
+  }
+  function loop() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    step++;
+    //画3个不同颜色的矩形
+    for (var j = lines.length - 1; j >= 0; j--) {
+      ctx.fillStyle = lines[j];
+      //每个矩形的角度都不同，每个之间相差45度
+      var angle = ((step + j * 130) * Math.PI) / 180;
+      var deltaHeight = Math.sin(angle) * boHeight;
+      var deltaHeightRight = Math.cos(angle) * boHeight;
+      ctx.beginPath();
+      ctx.moveTo(0, posHeight + deltaHeight);
+      ctx.bezierCurveTo(
+        canvas.width / 2,
+        posHeight + deltaHeight - boHeight,
+        canvas.width / 2,
+        posHeight + deltaHeightRight - boHeight,
+        canvas.width,
+        posHeight + deltaHeightRight
+      );
+      ctx.lineTo(canvas.width, canvas.height);
+      ctx.lineTo(0, canvas.height);
+      ctx.lineTo(0, posHeight + deltaHeight);
+      ctx.closePath();
+      ctx.fill();
+    }
+    requestAnimFrame(loop);
+  }
+}
 </script>
 <style lang="scss" scoped>
 .content {
@@ -621,8 +697,9 @@ export default {
 
 .head {
   background: url("../assets/index-top.png") no-repeat;
-  height: 1080px;
-  background-size: 100%;
+  // height: 1080px;
+  // background-size: 100%;
+  height: 100vh;
   min-width: 1300px;
   .navbar {
     display: flex;
