@@ -42,7 +42,7 @@
     </div>
     <div class="content" v-show="page_num==1">
       <div class="block">
-        <el-carousel :interval="2000" arrow="never" trigger="click" height="908px">
+        <el-carousel :interval="20000" arrow="never" trigger="click" height="708px">
           <el-carousel-item>
             <div class="content-item">
               <div class="content-left">
@@ -121,7 +121,7 @@
     </div>
     <div class="content nav_2_btn" v-show="page_num==2">
       <div class="block">
-        <el-carousel :interval="2000" arrow="never" trigger="click" height="908px">
+        <el-carousel :interval="20000" arrow="never" trigger="click" height="708px">
           <el-carousel-item>
             <div class="content-item">
               <div class="content-left">
@@ -271,7 +271,7 @@
     </div>
     <div class="content" v-show="page_num==6">
       <div class="block">
-        <el-carousel :interval="2000" arrow="never" trigger="click" height="908px">
+        <el-carousel :interval="20000" arrow="never" trigger="click" height="708px">
           <el-carousel-item>
             <div class="content-item">
               <div class="content-left">
@@ -350,7 +350,7 @@
     </div>
     <div class="content" v-show="page_num==7">
       <div class="block">
-        <el-carousel :interval="2000" arrow="never" trigger="click" height="908px">
+        <el-carousel :interval="20000" arrow="never" :autoplay="false" trigger="click" height="708px">
           <el-carousel-item>
             <div class="content-item">
               <div class="content-left">
@@ -427,6 +427,7 @@
         </el-carousel>
       </div>
     </div>
+
   </div>
 </template>
 
