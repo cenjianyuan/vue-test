@@ -38,11 +38,11 @@
     <Program></Program>
     <Section></Section>
     <div>
-      <canvas id="canvas" style="position:absolute;left:0px;z-index:0;top: 85vh;"></canvas>
+      <canvas id="canvas" style="position:absolute;left:0px;z-index:2;top: 85vh;"></canvas>
     </div>
     <div class="content" v-show="page_num==1">
       <div class="block">
-        <el-carousel :interval="40000" arrow="never" trigger="click" height="908px">
+        <el-carousel :interval="2000" arrow="never" trigger="click" height="908px">
           <el-carousel-item>
             <div class="content-item">
               <div class="content-left">
@@ -121,7 +121,7 @@
     </div>
     <div class="content nav_2_btn" v-show="page_num==2">
       <div class="block">
-        <el-carousel :interval="40000" arrow="never" trigger="click" height="908px">
+        <el-carousel :interval="2000" arrow="never" trigger="click" height="908px">
           <el-carousel-item>
             <div class="content-item">
               <div class="content-left">
@@ -271,7 +271,7 @@
     </div>
     <div class="content" v-show="page_num==6">
       <div class="block">
-        <el-carousel :interval="40000" arrow="never" trigger="click" height="908px">
+        <el-carousel :interval="2000" arrow="never" trigger="click" height="908px">
           <el-carousel-item>
             <div class="content-item">
               <div class="content-left">
@@ -350,7 +350,7 @@
     </div>
     <div class="content" v-show="page_num==7">
       <div class="block">
-        <el-carousel :interval="40000" arrow="never" trigger="click" height="908px">
+        <el-carousel :interval="2000" arrow="never" trigger="click" height="908px">
           <el-carousel-item>
             <div class="content-item">
               <div class="content-left">
@@ -434,7 +434,12 @@
 import Section from "./section";
 import Program from "./program";
 import $ from "jquery";
+
 export default {
+  components: {
+    Section,
+    Program
+  },
   data() {
     return {
       navs: [
@@ -462,6 +467,7 @@ export default {
       lanmu: ""
     };
   },
+
   ready() {},
   methods: {
     mypath(page) {
@@ -545,10 +551,7 @@ export default {
       // console.log("移除");
     }
   },
-  components: {
-    Section,
-    Program
-  },
+
   /**/
   beforeCreate() {
     console.log(this.page_num);
@@ -583,8 +586,6 @@ export default {
 };
 
 function wave(index) {
-  console.log(index);
-
   //顶部波浪
   var canvas = document.getElementById("canvas");
   var ctx = canvas.getContext("2d");
@@ -617,12 +618,66 @@ function wave(index) {
   //定义三条不同波浪的颜色
   var anum = 2;
   // 给每个页面加不同的颜色
+  var lines = [];
   for (var i = 0; i < anum; i++) {
-    var lines = [
-      "rgba(250,250,250, 1)",
-      "rgba(21,96,183, 0.5)",
-      "rgba(24,67,170, 0.6)"
-    ];
+    switch (index) {
+      case "1":
+        lines = [
+          "rgba(250,250,250, 1)",
+          "rgba(1,167,186, 0.4)",
+          "rgba(1,167,186, 0.6)"
+        ];
+        break;
+      case "2":
+        lines = [
+          "rgba(250,250,250, 1)",
+          "rgba(157,121,253, 0.3)",
+          "rgba(157,121,253, 0.8)"
+        ];
+        break;
+      case "3":
+        lines = [
+          "rgba(250,250,250, 1)",
+          "rgba(185,63,177, 0.3)",
+          "rgba(185,63,177, 0.8)"
+        ];
+        break;
+      case "4":
+        lines = [
+          "rgba(250,250,250, 1)",
+          "rgba(21,171,125, 0.3)",
+          "rgba(21,171,125, 0.8)"
+        ];
+        break;
+      case "5":
+        lines = [
+          "rgba(250,250,250, 1)",
+          "rgba(61,171,21, 0.3)",
+          "rgba(61,171,21, 0.7)"
+        ];
+        break;
+      case "6":
+        lines = [
+          "rgba(250,250,250, 1)",
+          "rgba(242,42,15, 0.3)",
+          "rgba(242,42,15, 0.7)"
+        ];
+        break;
+      case "7":
+        lines = [
+          "rgba(250,250,250, 1)",
+          "rgba(20,75,176, 0.3)",
+          "rgba(20,75,176, 0.7)"
+        ];
+        break;
+
+      default:
+        lines = [
+          "rgba(250,250,250, 1)",
+          "rgba(21,96,183, 0.5)",
+          "rgba(24,67,170, 0.6)"
+        ];
+    }
     loop();
   }
   function loop() {
