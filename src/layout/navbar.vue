@@ -350,7 +350,13 @@
     </div>
     <div class="content" v-show="page_num==7">
       <div class="block">
-        <el-carousel :interval="20000" arrow="never" :autoplay="false" trigger="click" height="708px">
+        <el-carousel
+          :interval="20000"
+          arrow="never"
+          :autoplay="false"
+          trigger="click"
+          height="708px"
+        >
           <el-carousel-item>
             <div class="content-item">
               <div class="content-left">
@@ -427,7 +433,6 @@
         </el-carousel>
       </div>
     </div>
-
   </div>
 </template>
 
@@ -476,46 +481,55 @@ export default {
       this.page_num = page;
       let show_id = document.getElementsByClassName("section")[0];
       let program = document.getElementsByClassName("program")[0];
+      let footer = document.getElementsByClassName("footer")[0];
 
       if (page == 0) {
         this.headclass = "";
         show_id.className = "section ht_1";
         program.className = "program ht_1";
+        footer.className = "footer head_0";
       }
       if (page == 1) {
         this.headclass = "head_1";
         show_id.className = "section ht_2";
         program.className = "program ht_2";
+        footer.className = "footer head_1";
       }
       if (page == 2) {
         this.headclass = "head_2";
         show_id.className = "section ht_3";
         program.className = "program ht_3";
+        footer.className = "footer head_2";
       }
       if (page == 3) {
         this.headclass = "head_3";
         show_id.className = "section ht_4";
         program.className = "program ht_4";
+        footer.className = "footer head_3";
       }
       if (page == 4) {
         this.headclass = "head_4";
         show_id.className = "section ht_5";
         program.className = "program ht_5";
+        footer.className = "footer head_4";
       }
       if (page == 5) {
         this.headclass = "head_5";
         show_id.className = "section ht_6";
         program.className = "program ht_6";
+        footer.className = "footer head_5";
       }
       if (page == 6) {
         this.headclass = "head_6";
         show_id.className = "section ht_7";
         program.className = "program ht_7";
+        footer.className = "footer head_6";
       }
       if (page == 7) {
         this.headclass = "head_7";
         show_id.className = "section ht_8";
         program.className = "program ht_8";
+        footer.className = "footer head_7";
       }
     },
     enter(index) {
@@ -713,7 +727,7 @@ function wave(index) {
 </script>
 <style lang="scss" scoped>
 .content {
-  width: 1300px;
+  max-width: 1300px;
   margin: 0 auto;
 }
 
