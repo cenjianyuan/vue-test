@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Layout from '@/layout/layout'
+import Layout from '@/layout/cooperation-text' //layout
 import login from '@/views/login/login'
 import index from '@/views/index/index'
 
@@ -19,7 +19,7 @@ export default new Router({
           component: () => import('@/views/login/login'),
           meta: { title: '登录' }
         },
-                {
+        {
           path: 'index',
           name: 'index',
           component: () => import('@/views/index/index'),
