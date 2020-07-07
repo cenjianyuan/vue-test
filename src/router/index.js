@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Layout from '@/layout/cooperation-text' //layout
+import Layout from '@/views/index/index' //layout
 import login from '@/views/login/login'
 import index from '@/views/index/index'
 
