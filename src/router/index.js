@@ -1,8 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Layout from '@/views/index/index' //layout
+import Layout from '@/views/cooperation' //layout
 import login from '@/views/login/login'
-import index from '@/views/index/index'
+import index from '@/views/index'
 
 Vue.use(Router)
 
@@ -22,7 +22,7 @@ export default new Router({
         {
           path: 'index',
           name: 'index',
-          component: () => import('@/views/index/index'),
+          component: () => import('@/views/index'),
           meta: { title: 'index' }
         }
       ]
