@@ -1,9 +1,9 @@
 <template>
-  <div class="app-wrapper">
-    login
-  </div>
+  <div class="">login</div>
 </template>
 
 <script>
-
+export default {};
 </script>
+<style scoped lang="scss">
+</style>
