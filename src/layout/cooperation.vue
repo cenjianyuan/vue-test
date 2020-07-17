@@ -143,6 +143,8 @@ export default {
   color: #01bcd5;
   margin: 0 auto;
   margin-top: 32px;
+  margin-bottom: 200px;
+  cursor: pointer;
 }
 .fanan-text {
   font-size: 38px;

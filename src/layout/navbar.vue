@@ -1,450 +1,476 @@
 <template>
-  <div :class="'head '+headclass">
-    <div class="navbar content">
-      <div class="navbar-left">
-        <img src="@/assets/logo.png" />
-        <h4>饭云智能科技</h4>
+  <div>
+    <div :class="'head '+headclass">
+      <div class="navbar content">
+        <div class="navbar-left">
+          <img src="@/assets/logo.png" />
+          <h4>饭云智能科技</h4>
+        </div>
+        <div>
+          <ul class="nav-wrap">
+            <li
+              v-for="item in navs"
+              :key="item.name"
+              class="nav"
+              @click="mypath(item.page)"
+              @mouseenter="enter(item.page)"
+              @mouseleave="leave()"
+            >
+              <router-link :to="item.path">{{item.name}}</router-link>
+            </li>
+          </ul>
+        </div>
+        <div class="navbar-rg">
+          <div class="login">登录</div>
+          <div class="registered">免费注册</div>
+        </div>
+        <div class="language">中文 | EN</div>
       </div>
-      <div>
-        <ul class="nav-wrap">
-          <li
-            v-for="item in navs"
-            :key="item.name"
-            class="nav"
-            @click="mypath(item.page)"
-            @mouseenter="enter(item.page)"
-            @mouseleave="leave()"
-          >
-            <router-link :to="item.path">{{item.name}}</router-link>
-          </li>
-        </ul>
-      </div>
-      <div class="navbar-rg">
-        <div class="login">登录</div>
-        <div class="registered">免费注册</div>
-      </div>
-      <div class="language">中文 | EN</div>
-    </div>
 
-    <div class="content" v-show="page_num==0">
-      <div class="content-noe">
-        <p>深度融合餐饮场景</p>
-        <p>饭云智能餐饮系统</p>
-      </div>
-      <div class="content-tow">专注餐饮 | 跨平台 | 云端同步 | 免费使用</div>
-      <div class="content-btn">免费下载</div>
-      <div class="content-foort">全面支持windows/安卓和iOS</div>
-    </div>
-    <Program></Program>
-    <Section></Section>
-    <div>
-      <canvas id="canvas" style="position:absolute;left:0px;z-index:2;top: 85vh;"></canvas>
-    </div>
-    <div class="content" v-show="page_num==1">
-      <div class="block">
-        <el-carousel :interval="20000" arrow="never" trigger="click" height="708px">
-          <el-carousel-item>
-            <div class="content-item">
-              <div class="content-left">
-                <div class="content-noe">
-                  <p>饭云餐饮收银系统</p>
-                  <p>不挑硬件平台</p>
-                  <p>电脑也可收银</p>
-                </div>
-                <div class="content-tow">3秒极速支付 聚合微信 支付宝 银联 Apple pay等多种支付方式让账单一目了然</div>
-                <div class="content-btn">免费下载</div>
-                <div class="content-foort">全面支持windows/安卓和iOS</div>
-              </div>
-              <div class="content-rg">
-                <div class="demo-image__lazy">
-                  <el-image :src="banner1" :lazy="true"></el-image>
-                </div>
-              </div>
-            </div>
-          </el-carousel-item>
-          <el-carousel-item>
-            <div class="content-item">
-              <div class="content-left">
-                <div class="content-noe">
-                  <p>FanYun AI 1X</p>
-                  <p>智能餐饮系统</p>
-                </div>
-                <div class="content-tow">3秒极速支付 聚合微信 支付宝 银联 Apple pay等多种支付方式让账单一目了然</div>
-                <div class="content-btn">免费下载</div>
-                <div class="content-foort">全面支持windows/安卓和iOS</div>
-              </div>
-              <div class="content-rg">
-                <div class="demo-image__lazy item_2">
-                  <el-image :src="banner2" :lazy="true"></el-image>
-                </div>
-              </div>
-            </div>
-          </el-carousel-item>
-          <el-carousel-item>
-            <div class="content-item">
-              <div class="content-left">
-                <div class="content-noe">
-                  <p>FanYun AI 1X</p>
-                  <p>智能餐饮系统</p>
-                </div>
-                <div class="content-tow">3秒极速支付 聚合微信 支付宝 银联 Apple pay等多种支付方式让账单一目了然</div>
-                <div class="content-btn">免费下载</div>
-                <div class="content-foort">全面支持windows/安卓和iOS</div>
-              </div>
-              <div class="content-rg">
-                <div class="demo-image__lazy item_3">
-                  <el-image :src="banner3" :lazy="true"></el-image>
-                </div>
-              </div>
-            </div>
-          </el-carousel-item>
-          <el-carousel-item>
-            <div class="content-item">
-              <div class="content-left">
-                <div class="content-noe">
-                  <p>FanYun AI 1X</p>
-                  <p>智能餐饮系统</p>
-                </div>
-                <div class="content-tow">3秒极速支付 聚合微信 支付宝 银联 Apple pay等多种支付方式让账单一目了然</div>
-                <div class="content-btn">免费下载</div>
-                <div class="content-foort">全面支持windows/安卓和iOS</div>
-              </div>
-              <div class="content-rg">
-                <div class="demo-image__lazy item_3">
-                  <el-image :src="banner4" :lazy="true"></el-image>
-                </div>
-              </div>
-            </div>
-          </el-carousel-item>
-        </el-carousel>
-      </div>
-    </div>
-    <div class="content nav_2_btn" v-show="page_num==2">
-      <div class="block">
-        <el-carousel :interval="20000" arrow="never" trigger="click" height="708px">
-          <el-carousel-item>
-            <div class="content-item">
-              <div class="content-left">
-                <div class="content-noe">
-                  <p>饭云智能餐饮系统</p>
-                  <p>中餐运营效率解决方案</p>
-                </div>
-                <div class="content-tow">
-                  饭云智能餐饮系统多平台统一设计，采用扁
-                  平化界面并重新设计功能布局， 更支持触屏
-                  操作，为您快速提升收银效率。从传统餐饮
-                  系统快速转换再无不适感。
-                </div>
-                <div class="content-btn">饭云智能收银系统</div>
-              </div>
-              <div class="content-rg">
-                <div class="demo-image__lazy">
-                  <el-image :src="banner5" :lazy="true"></el-image>
-                </div>
-              </div>
-            </div>
-          </el-carousel-item>
-          <el-carousel-item>
-            <div class="content-item">
-              <div class="content-left">
-                <div class="content-noe">
-                  <p>饭云智能餐饮系统</p>
-                  <p>中餐运营效率解决方案</p>
-                </div>
-                <div class="content-tow">
-                  饭云智能餐饮系统多平台统一设计，采用扁
-                  平化界面并重新设计功能布局， 更支持触屏
-                  操作，为您快速提升收银效率。从传统餐饮
-                  系统快速转换再无不适感。
-                </div>
-                <div class="content-btn">饭云智能收银系统</div>
-              </div>
-              <div class="content-rg">
-                <div class="demo-image__lazy">
-                  <el-image :src="banner5" :lazy="true"></el-image>
-                </div>
-              </div>
-            </div>
-          </el-carousel-item>
-          <el-carousel-item>
-            <div class="content-item">
-              <div class="content-left">
-                <div class="content-noe">
-                  <p>饭云智能餐饮系统</p>
-                  <p>中餐运营效率解决方案</p>
-                </div>
-                <div class="content-tow">
-                  饭云智能餐饮系统多平台统一设计，采用扁
-                  平化界面并重新设计功能布局， 更支持触屏
-                  操作，为您快速提升收银效率。从传统餐饮
-                  系统快速转换再无不适感。
-                </div>
-                <div class="content-btn">饭云智能收银系统</div>
-              </div>
-              <div class="content-rg">
-                <div class="demo-image__lazy">
-                  <el-image :src="banner5" :lazy="true"></el-image>
-                </div>
-              </div>
-            </div>
-          </el-carousel-item>
-          <el-carousel-item>
-            <div class="content-item">
-              <div class="content-left">
-                <div class="content-noe">
-                  <p>饭云智能餐饮系统</p>
-                  <p>中餐运营效率解决方案</p>
-                </div>
-                <div class="content-tow">
-                  饭云智能餐饮系统多平台统一设计，采用扁
-                  平化界面并重新设计功能布局， 更支持触屏
-                  操作，为您快速提升收银效率。从传统餐饮
-                  系统快速转换再无不适感。
-                </div>
-                <div class="content-btn">饭云智能收银系统</div>
-              </div>
-              <div class="content-rg">
-                <div class="demo-image__lazy">
-                  <el-image :src="banner5" :lazy="true"></el-image>
-                </div>
-              </div>
-            </div>
-          </el-carousel-item>
-        </el-carousel>
-      </div>
-    </div>
-    <div class="content" v-show="page_num==3">
-      <div class="content-item">
-        <div class="content-left">
-          <div class="content-noe">
-            <p>实现质的飞跃</p>
-            <p>需要有饭云餐饮系统</p>
-          </div>
-          <div class="content-tow">
-            饭云智能餐饮系统能快速部署，数据无缝对接，快速上手
-            能处理各项经营场景和找出经营不足，业绩也明显提升
-            当然大家才更爱用
-          </div>
-          <div class="content-btn">免费注册</div>
+      <div class="content" v-show="page_num==0">
+        <div class="content-noe">
+          <p>深度融合餐饮场景</p>
+          <p>饭云智能餐饮系统</p>
         </div>
-        <div class="content-rg">
-          <div class="demo-image__lazy">
-            <el-image :src="banner6" :lazy="true"></el-image>
-          </div>
+        <div class="content-tow">专注餐饮 | 跨平台 | 云端同步 | 免费使用</div>
+        <div class="content-btn">免费下载</div>
+        <div class="content-foort">全面支持windows/安卓和iOS</div>
+      </div>
+      <Program></Program>
+      <Section></Section>
+      <div>
+        <canvas id="canvas" style="position:absolute;left:0px;z-index:2;top: 85vh;"></canvas>
+      </div>
+      <div class="content" v-show="page_num==1">
+        <div class="block">
+          <el-carousel :interval="20000" arrow="never" trigger="click" height="708px">
+            <el-carousel-item>
+              <div class="content-item">
+                <div class="content-left">
+                  <div class="content-noe">
+                    <p>饭云餐饮收银系统</p>
+                    <p>不挑硬件平台</p>
+                    <p>电脑也可收银</p>
+                  </div>
+                  <div class="content-tow">3秒极速支付 聚合微信 支付宝 银联 Apple pay等多种支付方式让账单一目了然</div>
+                  <div class="content-btn">免费下载</div>
+                  <div class="content-foort">全面支持windows/安卓和iOS</div>
+                </div>
+                <div class="content-rg">
+                  <div class="demo-image__lazy">
+                    <el-image :src="banner1" :lazy="true"></el-image>
+                  </div>
+                </div>
+              </div>
+            </el-carousel-item>
+            <el-carousel-item>
+              <div class="content-item">
+                <div class="content-left">
+                  <div class="content-noe">
+                    <p>FanYun AI 1X</p>
+                    <p>智能餐饮系统</p>
+                  </div>
+                  <div class="content-tow">3秒极速支付 聚合微信 支付宝 银联 Apple pay等多种支付方式让账单一目了然</div>
+                  <div class="content-btn">免费下载</div>
+                  <div class="content-foort">全面支持windows/安卓和iOS</div>
+                </div>
+                <div class="content-rg">
+                  <div class="demo-image__lazy item_2">
+                    <el-image :src="banner2" :lazy="true"></el-image>
+                  </div>
+                </div>
+              </div>
+            </el-carousel-item>
+            <el-carousel-item>
+              <div class="content-item">
+                <div class="content-left">
+                  <div class="content-noe">
+                    <p>FanYun AI 1X</p>
+                    <p>智能餐饮系统</p>
+                  </div>
+                  <div class="content-tow">3秒极速支付 聚合微信 支付宝 银联 Apple pay等多种支付方式让账单一目了然</div>
+                  <div class="content-btn">免费下载</div>
+                  <div class="content-foort">全面支持windows/安卓和iOS</div>
+                </div>
+                <div class="content-rg">
+                  <div class="demo-image__lazy item_3">
+                    <el-image :src="banner3" :lazy="true"></el-image>
+                  </div>
+                </div>
+              </div>
+            </el-carousel-item>
+            <el-carousel-item>
+              <div class="content-item">
+                <div class="content-left">
+                  <div class="content-noe">
+                    <p>FanYun AI 1X</p>
+                    <p>智能餐饮系统</p>
+                  </div>
+                  <div class="content-tow">3秒极速支付 聚合微信 支付宝 银联 Apple pay等多种支付方式让账单一目了然</div>
+                  <div class="content-btn">免费下载</div>
+                  <div class="content-foort">全面支持windows/安卓和iOS</div>
+                </div>
+                <div class="content-rg">
+                  <div class="demo-image__lazy item_3">
+                    <el-image :src="banner4" :lazy="true"></el-image>
+                  </div>
+                </div>
+              </div>
+            </el-carousel-item>
+          </el-carousel>
         </div>
       </div>
-    </div>
-    <div class="content" v-show="page_num==4">
-      <div class="content-item">
-        <div class="content-left">
-          <div class="content-noe">
-            <p>加入饭云</p>
-            <p>为智能餐饮贡献智慧</p>
-          </div>
-          <div class="content-btn">我要加入</div>
-        </div>
-        <div class="content-rg">
-          <div class="demo-image__lazy">
-            <img :src="banner8" alt />
-          </div>
+      <div class="content nav_2_btn" v-show="page_num==2">
+        <div class="block">
+          <el-carousel :interval="20000" arrow="never" trigger="click" height="708px">
+            <el-carousel-item>
+              <div class="content-item">
+                <div class="content-left">
+                  <div class="content-noe">
+                    <p>饭云智能餐饮系统</p>
+                    <p>中餐运营效率解决方案</p>
+                  </div>
+                  <div class="content-tow">
+                    饭云智能餐饮系统多平台统一设计，采用扁
+                    平化界面并重新设计功能布局， 更支持触屏
+                    操作，为您快速提升收银效率。从传统餐饮
+                    系统快速转换再无不适感。
+                  </div>
+                  <div class="content-btn">饭云智能收银系统</div>
+                </div>
+                <div class="content-rg">
+                  <div class="demo-image__lazy">
+                    <el-image :src="banner5" :lazy="true"></el-image>
+                  </div>
+                </div>
+              </div>
+            </el-carousel-item>
+            <el-carousel-item>
+              <div class="content-item">
+                <div class="content-left">
+                  <div class="content-noe">
+                    <p>饭云智能餐饮系统</p>
+                    <p>中餐运营效率解决方案</p>
+                  </div>
+                  <div class="content-tow">
+                    饭云智能餐饮系统多平台统一设计，采用扁
+                    平化界面并重新设计功能布局， 更支持触屏
+                    操作，为您快速提升收银效率。从传统餐饮
+                    系统快速转换再无不适感。
+                  </div>
+                  <div class="content-btn">饭云智能收银系统</div>
+                </div>
+                <div class="content-rg">
+                  <div class="demo-image__lazy">
+                    <el-image :src="banner5" :lazy="true"></el-image>
+                  </div>
+                </div>
+              </div>
+            </el-carousel-item>
+            <el-carousel-item>
+              <div class="content-item">
+                <div class="content-left">
+                  <div class="content-noe">
+                    <p>饭云智能餐饮系统</p>
+                    <p>中餐运营效率解决方案</p>
+                  </div>
+                  <div class="content-tow">
+                    饭云智能餐饮系统多平台统一设计，采用扁
+                    平化界面并重新设计功能布局， 更支持触屏
+                    操作，为您快速提升收银效率。从传统餐饮
+                    系统快速转换再无不适感。
+                  </div>
+                  <div class="content-btn">饭云智能收银系统</div>
+                </div>
+                <div class="content-rg">
+                  <div class="demo-image__lazy">
+                    <el-image :src="banner5" :lazy="true"></el-image>
+                  </div>
+                </div>
+              </div>
+            </el-carousel-item>
+            <el-carousel-item>
+              <div class="content-item">
+                <div class="content-left">
+                  <div class="content-noe">
+                    <p>饭云智能餐饮系统</p>
+                    <p>中餐运营效率解决方案</p>
+                  </div>
+                  <div class="content-tow">
+                    饭云智能餐饮系统多平台统一设计，采用扁
+                    平化界面并重新设计功能布局， 更支持触屏
+                    操作，为您快速提升收银效率。从传统餐饮
+                    系统快速转换再无不适感。
+                  </div>
+                  <div class="content-btn">饭云智能收银系统</div>
+                </div>
+                <div class="content-rg">
+                  <div class="demo-image__lazy">
+                    <el-image :src="banner5" :lazy="true"></el-image>
+                  </div>
+                </div>
+              </div>
+            </el-carousel-item>
+          </el-carousel>
         </div>
       </div>
-      <div class="banner-bg">
-        <img :src="banner7" alt />
-      </div>
-    </div>
-    <div class="content" v-show="page_num==5">
-      <div class="content-item">
-        <div class="content-left">
-          <div class="content-noe">
-            <p>搜索获得帮助</p>
-            <div class="search">
-              <input type="text" placeholder="请输入关键字.." />
-              <div class="search-btn">搜索</div>
+      <div class="content" v-show="page_num==3">
+        <div class="content-item">
+          <div class="content-left">
+            <div class="content-noe">
+              <p>实现质的飞跃</p>
+              <p>需要有饭云餐饮系统</p>
+            </div>
+            <div class="content-tow">
+              饭云智能餐饮系统能快速部署，数据无缝对接，快速上手
+              能处理各项经营场景和找出经营不足，业绩也明显提升
+              当然大家才更爱用
+            </div>
+            <div class="content-btn">免费注册</div>
+          </div>
+          <div class="content-rg">
+            <div class="demo-image__lazy">
+              <el-image :src="banner6" :lazy="true"></el-image>
             </div>
           </div>
         </div>
       </div>
-      <div class="banner-bg">
-        <img :src="banner9" alt />
+      <div class="content" v-show="page_num==4">
+        <div class="content-item">
+          <div class="content-left">
+            <div class="content-noe">
+              <p>加入饭云</p>
+              <p>为智能餐饮贡献智慧</p>
+            </div>
+            <div class="content-btn">我要加入</div>
+          </div>
+          <div class="content-rg">
+            <div class="demo-image__lazy">
+              <img :src="banner8" alt />
+            </div>
+          </div>
+        </div>
+        <div class="banner-bg">
+          <img :src="banner7" alt />
+        </div>
+      </div>
+      <div class="content" v-show="page_num==5">
+        <div class="content-item">
+          <div class="content-left">
+            <div class="content-noe">
+              <p>搜索获得帮助</p>
+              <div class="search">
+                <input type="text" placeholder="请输入关键字.." />
+                <div class="search-btn">搜索</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="banner-bg">
+          <img :src="banner9" alt />
+        </div>
+      </div>
+      <div class="content" v-show="page_num==6">
+        <div class="block">
+          <el-carousel :interval="20000" arrow="never" trigger="click" height="708px">
+            <el-carousel-item>
+              <div class="content-item">
+                <div class="content-left">
+                  <div class="content-noe">
+                    <p>饭云餐饮收银系统</p>
+                    <p>不挑硬件平台</p>
+                    <p>电脑也可收银</p>
+                  </div>
+                  <div class="content-tow">3秒极速支付 聚合微信 支付宝 银联 Apple pay等多种支付方式让账单一目了然</div>
+                  <div class="content-btn">免费下载</div>
+                  <div class="content-foort">全面支持windows/安卓和iOS</div>
+                </div>
+                <div class="content-rg">
+                  <div class="demo-image__lazy">
+                    <el-image :src="banner1" :lazy="true"></el-image>
+                  </div>
+                </div>
+              </div>
+            </el-carousel-item>
+            <el-carousel-item>
+              <div class="content-item">
+                <div class="content-left">
+                  <div class="content-noe">
+                    <p>FanYun AI 1X</p>
+                    <p>智能餐饮系统</p>
+                  </div>
+                  <div class="content-tow">3秒极速支付 聚合微信 支付宝 银联 Apple pay等多种支付方式让账单一目了然</div>
+                  <div class="content-btn">免费下载</div>
+                  <div class="content-foort">全面支持windows/安卓和iOS</div>
+                </div>
+                <div class="content-rg">
+                  <div class="demo-image__lazy item_2">
+                    <el-image :src="banner2" :lazy="true"></el-image>
+                  </div>
+                </div>
+              </div>
+            </el-carousel-item>
+            <el-carousel-item>
+              <div class="content-item">
+                <div class="content-left">
+                  <div class="content-noe">
+                    <p>FanYun AI 1X</p>
+                    <p>智能餐饮系统</p>
+                  </div>
+                  <div class="content-tow">3秒极速支付 聚合微信 支付宝 银联 Apple pay等多种支付方式让账单一目了然</div>
+                  <div class="content-btn">免费下载</div>
+                  <div class="content-foort">全面支持windows/安卓和iOS</div>
+                </div>
+                <div class="content-rg">
+                  <div class="demo-image__lazy item_3">
+                    <el-image :src="banner3" :lazy="true"></el-image>
+                  </div>
+                </div>
+              </div>
+            </el-carousel-item>
+            <el-carousel-item>
+              <div class="content-item">
+                <div class="content-left">
+                  <div class="content-noe">
+                    <p>FanYun AI 1X</p>
+                    <p>智能餐饮系统</p>
+                  </div>
+                  <div class="content-tow">3秒极速支付 聚合微信 支付宝 银联 Apple pay等多种支付方式让账单一目了然</div>
+                  <div class="content-btn">免费下载</div>
+                  <div class="content-foort">全面支持windows/安卓和iOS</div>
+                </div>
+                <div class="content-rg">
+                  <div class="demo-image__lazy item_3">
+                    <el-image :src="banner4" :lazy="true"></el-image>
+                  </div>
+                </div>
+              </div>
+            </el-carousel-item>
+          </el-carousel>
+        </div>
+      </div>
+      <div class="content" v-show="page_num==7">
+        <div class="block">
+          <el-carousel
+            :interval="20000"
+            arrow="never"
+            :autoplay="false"
+            trigger="click"
+            height="708px"
+          >
+            <el-carousel-item>
+              <div class="content-item">
+                <div class="content-left">
+                  <div class="content-noe">
+                    <p>饭云餐饮收银系统</p>
+                    <p>不挑硬件平台</p>
+                    <p>电脑也可收银</p>
+                  </div>
+                  <div class="content-tow">3秒极速支付 聚合微信 支付宝 银联 Apple pay等多种支付方式让账单一目了然</div>
+                  <div class="content-btn">免费下载</div>
+                  <div class="content-foort">全面支持windows/安卓和iOS</div>
+                </div>
+                <div class="content-rg">
+                  <div class="demo-image__lazy">
+                    <el-image :src="banner1" :lazy="true"></el-image>
+                  </div>
+                </div>
+              </div>
+            </el-carousel-item>
+            <el-carousel-item>
+              <div class="content-item">
+                <div class="content-left">
+                  <div class="content-noe">
+                    <p>FanYun AI 1X</p>
+                    <p>智能餐饮系统</p>
+                  </div>
+                  <div class="content-tow">3秒极速支付 聚合微信 支付宝 银联 Apple pay等多种支付方式让账单一目了然</div>
+                  <div class="content-btn">免费下载</div>
+                  <div class="content-foort">全面支持windows/安卓和iOS</div>
+                </div>
+                <div class="content-rg">
+                  <div class="demo-image__lazy item_2">
+                    <el-image :src="banner2" :lazy="true"></el-image>
+                  </div>
+                </div>
+              </div>
+            </el-carousel-item>
+            <el-carousel-item>
+              <div class="content-item">
+                <div class="content-left">
+                  <div class="content-noe">
+                    <p>FanYun AI 1X</p>
+                    <p>智能餐饮系统</p>
+                  </div>
+                  <div class="content-tow">3秒极速支付 聚合微信 支付宝 银联 Apple pay等多种支付方式让账单一目了然</div>
+                  <div class="content-btn">免费下载</div>
+                  <div class="content-foort">全面支持windows/安卓和iOS</div>
+                </div>
+                <div class="content-rg">
+                  <div class="demo-image__lazy item_3">
+                    <el-image :src="banner3" :lazy="true"></el-image>
+                  </div>
+                </div>
+              </div>
+            </el-carousel-item>
+            <el-carousel-item>
+              <div class="content-item">
+                <div class="content-left">
+                  <div class="content-noe">
+                    <p>FanYun AI 1X</p>
+                    <p>智能餐饮系统</p>
+                  </div>
+                  <div class="content-tow">3秒极速支付 聚合微信 支付宝 银联 Apple pay等多种支付方式让账单一目了然</div>
+                  <div class="content-btn">免费下载</div>
+                  <div class="content-foort">全面支持windows/安卓和iOS</div>
+                </div>
+                <div class="content-rg">
+                  <div class="demo-image__lazy item_3">
+                    <el-image :src="banner4" :lazy="true"></el-image>
+                  </div>
+                </div>
+              </div>
+            </el-carousel-item>
+          </el-carousel>
+        </div>
       </div>
     </div>
-    <div class="content" v-show="page_num==6">
-      <div class="block">
-        <el-carousel :interval="20000" arrow="never" trigger="click" height="708px">
-          <el-carousel-item>
-            <div class="content-item">
-              <div class="content-left">
-                <div class="content-noe">
-                  <p>饭云餐饮收银系统</p>
-                  <p>不挑硬件平台</p>
-                  <p>电脑也可收银</p>
-                </div>
-                <div class="content-tow">3秒极速支付 聚合微信 支付宝 银联 Apple pay等多种支付方式让账单一目了然</div>
-                <div class="content-btn">免费下载</div>
-                <div class="content-foort">全面支持windows/安卓和iOS</div>
-              </div>
-              <div class="content-rg">
-                <div class="demo-image__lazy">
-                  <el-image :src="banner1" :lazy="true"></el-image>
-                </div>
-              </div>
-            </div>
-          </el-carousel-item>
-          <el-carousel-item>
-            <div class="content-item">
-              <div class="content-left">
-                <div class="content-noe">
-                  <p>FanYun AI 1X</p>
-                  <p>智能餐饮系统</p>
-                </div>
-                <div class="content-tow">3秒极速支付 聚合微信 支付宝 银联 Apple pay等多种支付方式让账单一目了然</div>
-                <div class="content-btn">免费下载</div>
-                <div class="content-foort">全面支持windows/安卓和iOS</div>
-              </div>
-              <div class="content-rg">
-                <div class="demo-image__lazy item_2">
-                  <el-image :src="banner2" :lazy="true"></el-image>
-                </div>
-              </div>
-            </div>
-          </el-carousel-item>
-          <el-carousel-item>
-            <div class="content-item">
-              <div class="content-left">
-                <div class="content-noe">
-                  <p>FanYun AI 1X</p>
-                  <p>智能餐饮系统</p>
-                </div>
-                <div class="content-tow">3秒极速支付 聚合微信 支付宝 银联 Apple pay等多种支付方式让账单一目了然</div>
-                <div class="content-btn">免费下载</div>
-                <div class="content-foort">全面支持windows/安卓和iOS</div>
-              </div>
-              <div class="content-rg">
-                <div class="demo-image__lazy item_3">
-                  <el-image :src="banner3" :lazy="true"></el-image>
-                </div>
-              </div>
-            </div>
-          </el-carousel-item>
-          <el-carousel-item>
-            <div class="content-item">
-              <div class="content-left">
-                <div class="content-noe">
-                  <p>FanYun AI 1X</p>
-                  <p>智能餐饮系统</p>
-                </div>
-                <div class="content-tow">3秒极速支付 聚合微信 支付宝 银联 Apple pay等多种支付方式让账单一目了然</div>
-                <div class="content-btn">免费下载</div>
-                <div class="content-foort">全面支持windows/安卓和iOS</div>
-              </div>
-              <div class="content-rg">
-                <div class="demo-image__lazy item_3">
-                  <el-image :src="banner4" :lazy="true"></el-image>
-                </div>
-              </div>
-            </div>
-          </el-carousel-item>
-        </el-carousel>
-      </div>
-    </div>
-    <div class="content" v-show="page_num==7">
-      <div class="block">
-        <el-carousel
-          :interval="20000"
-          arrow="never"
-          :autoplay="false"
-          trigger="click"
-          height="708px"
-        >
-          <el-carousel-item>
-            <div class="content-item">
-              <div class="content-left">
-                <div class="content-noe">
-                  <p>饭云餐饮收银系统</p>
-                  <p>不挑硬件平台</p>
-                  <p>电脑也可收银</p>
-                </div>
-                <div class="content-tow">3秒极速支付 聚合微信 支付宝 银联 Apple pay等多种支付方式让账单一目了然</div>
-                <div class="content-btn">免费下载</div>
-                <div class="content-foort">全面支持windows/安卓和iOS</div>
-              </div>
-              <div class="content-rg">
-                <div class="demo-image__lazy">
-                  <el-image :src="banner1" :lazy="true"></el-image>
-                </div>
-              </div>
-            </div>
-          </el-carousel-item>
-          <el-carousel-item>
-            <div class="content-item">
-              <div class="content-left">
-                <div class="content-noe">
-                  <p>FanYun AI 1X</p>
-                  <p>智能餐饮系统</p>
-                </div>
-                <div class="content-tow">3秒极速支付 聚合微信 支付宝 银联 Apple pay等多种支付方式让账单一目了然</div>
-                <div class="content-btn">免费下载</div>
-                <div class="content-foort">全面支持windows/安卓和iOS</div>
-              </div>
-              <div class="content-rg">
-                <div class="demo-image__lazy item_2">
-                  <el-image :src="banner2" :lazy="true"></el-image>
-                </div>
-              </div>
-            </div>
-          </el-carousel-item>
-          <el-carousel-item>
-            <div class="content-item">
-              <div class="content-left">
-                <div class="content-noe">
-                  <p>FanYun AI 1X</p>
-                  <p>智能餐饮系统</p>
-                </div>
-                <div class="content-tow">3秒极速支付 聚合微信 支付宝 银联 Apple pay等多种支付方式让账单一目了然</div>
-                <div class="content-btn">免费下载</div>
-                <div class="content-foort">全面支持windows/安卓和iOS</div>
-              </div>
-              <div class="content-rg">
-                <div class="demo-image__lazy item_3">
-                  <el-image :src="banner3" :lazy="true"></el-image>
-                </div>
-              </div>
-            </div>
-          </el-carousel-item>
-          <el-carousel-item>
-            <div class="content-item">
-              <div class="content-left">
-                <div class="content-noe">
-                  <p>FanYun AI 1X</p>
-                  <p>智能餐饮系统</p>
-                </div>
-                <div class="content-tow">3秒极速支付 聚合微信 支付宝 银联 Apple pay等多种支付方式让账单一目了然</div>
-                <div class="content-btn">免费下载</div>
-                <div class="content-foort">全面支持windows/安卓和iOS</div>
-              </div>
-              <div class="content-rg">
-                <div class="demo-image__lazy item_3">
-                  <el-image :src="banner4" :lazy="true"></el-image>
-                </div>
-              </div>
-            </div>
-          </el-carousel-item>
-        </el-carousel>
-      </div>
-    </div>
+    <Index v-show="page_num==0"></Index>
+    <Service v-show="page_num==1||page_num==2"></Service>
+    <Cooperation v-show="page_num==3"></Cooperation>
+    <Join v-show="page_num==4"></Join>
+    <Help v-show="page_num==5"></Help>
+    <shopping v-show="page_num==6"></shopping>
+    <download v-show="page_num==7"></download>
   </div>
 </template>
 
 <script>
 import Section from "./section";
 import Program from "./program";
+
+import Index from "../views/index";
+import Service from "../views/service";
+import Cooperation from "../views/cooperation";
+import Join from "../views/join";
+import Help from "../views/help";
+import shopping from "../views/shopping";
+import download from "../views/download";
+
 import $ from "jquery";
 
 export default {
   components: {
     Section,
-    Program
+    Program,
+
+    Index,
+    Service,
+    Cooperation,
+    Join,
+    Help,
+    shopping,
+    download
   },
   data() {
     return {
@@ -837,6 +863,7 @@ function wave(index) {
       right: 2px;
       top: 5px;
       font-size: 14px;
+      cursor: pointer;
     }
   }
   .content {

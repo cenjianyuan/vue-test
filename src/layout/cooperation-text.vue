@@ -1,12 +1,6 @@
 <template>
   <div class="cooperation">
     <div class="cooperation-fanan">
-      <div class="fanan-text">
-        <p>我们为所有餐厅提供价格低廉的软件解决方案</p>
-        <p>真正让所有的经营者体验到管理自动化带来的优势</p>
-        <p>同时达到最佳的投资回报率</p>
-      </div>
-
       <div class="fanan-ico">
         <div class="ico-box">
           <img src="@/assets/yingyong.png" alt />
@@ -53,6 +47,9 @@ export default {
 .cooperation {
   background: #f7fafc;
 }
+.cooperation-fanan{
+  margin-bottom: 200px;
+}
 .fanan-text {
   font-size: 38px;
   line-height: 68px;
@@ -68,7 +65,8 @@ export default {
   color: #707070;
   line-height: 23px;
   font-weight: 300;
-  margin-top: 60px;
+  // margin-top: 60px;
+  padding-top: 60px;
   .ico-box {
     display: flex;
     width: 33%;
