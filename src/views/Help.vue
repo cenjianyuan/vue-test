@@ -3,26 +3,26 @@
     <div class="help-content">
       <div class="help-left">
         <ul>
-          <li class="titel" >热点问题</li>
-          <li :class="{active: index ===  currentIndex}" @click='itemClick(index)'>安装、设置与运行</li>
-          <li :class="{active: index ===  currentIndex}" @click='itemClick(index)'>登陆、员工与权限</li>
-          <li :class="{active: index ===  currentIndex}" @click='itemClick(index)'>收银操作、快捷键</li>
-          <li :class="{active: index ===  currentIndex}" @click='itemClick(index)'>硬件相关</li>
-          <li :class="{active: index ===  currentIndex}" @click='itemClick(index)'>商品、库存与货流</li>
-          <li :class="{active: index ===  currentIndex}" @click='itemClick(index)'>报表、数据与同步</li>
-          <li :class="{active: index ===  currentIndex}" @click='itemClick(index)'>促销管理、优惠券</li>
-          <li :class="{active: index ===  currentIndex}" @click='itemClick(index)'>我的店铺</li>
-          <li :class="{active: index ===  currentIndex}" @click='itemClick(index)'>会员管理</li>
-          <li :class="{active: index ===  currentIndex}" @click='itemClick(index)'>网店相关</li>
+          <li :class="{'titel hover':'0' ==index}" @click="clickfun(0)">热点问题</li>
+          <li :class="{'titel hover':'1' ==index}" @click="clickfun(1)">安装、设置与运行</li>
+          <li :class="{'titel hover':'2' ==index}" @click="clickfun(2)">登陆、员工与权限</li>
+          <li :class="{'titel hover':'3' ==index}" @click="clickfun(3)">收银操作、快捷键</li>
+          <li :class="{'titel hover':'4' ==index}" @click="clickfun(4)">硬件相关</li>
+          <li :class="{'titel hover':'5' ==index}" @click="clickfun(5)">商品、库存与货流</li>
+          <li :class="{'titel hover':'6' ==index}" @click="clickfun(6)">报表、数据与同步</li>
+          <li :class="{'titel hover':'7' ==index}" @click="clickfun(7)">促销管理、优惠券</li>
+          <li :class="{'titel hover':'8' ==index}" @click="clickfun(8)">我的店铺</li>
+          <li :class="{'titel hover':'9' ==index}" @click="clickfun(9)">会员管理</li>
+          <li :class="{'titel hover': '10' ==index}" @click="clickfun(10)">网店相关</li>
         </ul>
       </div>
       <div class="help-right">
         <div class="search">
-          <div>热点问题</div>
+          <div>{{ litel_text }}</div>
         </div>
         <div class="search-list">
           <div class="list-item">
-            <p v-for="item in problem" :key="item">{{item.text}}</p>
+            <p v-for="item in dataproblem" :key="item">{{item.text}}</p>
           </div>
         </div>
       </div>
@@ -119,11 +119,97 @@ export default {
         { text: ". 开启软件时提示“已经开启不要重复开启”" },
         { text: ". 为什么刚下载软件安装后会出现报错？" }
       ],
-      currentIndex: 0
+      problem_1: [
+        { text: ". 银豹收银系统的操作环境及硬件要求？" },
+        { text: ". 为什么刚下载软件安装后会出现报错？" },
+        { text: ". 开启软件时提示“已经开启不要重复开启”" },
+        { text: ". 为什么点击软件图标却打不开？" },
+        { text: ". 为什么软件老是提示“系统错误”？" },
+        { text: ". 软件使用中突然断网会怎么样？" },
+        { text: ". 断网了还能正常收银吗？" },
+        { text: ". 安装软件时，提示“银豹收银系统已停止工作”？" },
+        { text: ". Xp系统安装以后，第二次开机后无法打开软件？" },
+        {
+          text:
+            ". 为什么登陆时提示“当前程序发生错误，请尝试关闭软件后重试或及时反馈给我们”？"
+        },
+        { text: ". 为什么登录时提示“无法连接远程服务器”？" }
+      ],
+      problem_2: [
+        { text: " 如何登录PosPal银豹收银系统？. 账号和工号有什么区别？. 如何注销账号 ？. 如何进入云端后台？. 想要换个账号登录，如何操作？. 收银员登录时，提示“工号不存在”怎么办？. 软件登陆提示无此账号怎么办？. 怎么给员工开通后台权限？. 为什么收银前台看不到日结报表？. 为什么前台员工不能进行退货操作？. 收银员是否可以登入后台操作进货/调货等，但只让他看到部分信息？ . 员工有自己独立的后台吗？. 如何锁住商品库存和会员卡余额积分，使店员无法修改？" },
+        { text: ". 为什么刚下载软件安装后会出现报错？" },
+        { text: ". 开启软件时提示“已经开启不要重复开启”" },
+        { text: ". 为什么点击软件图标却打不开？" },
+        { text: ". 为什么软件老是提示“系统错误”？" },
+        { text: ". 软件使用中突然断网会怎么样？" },
+        { text: ". 断网了还能正常收银吗？" },
+        { text: ". 安装软件时，提示“银豹收银系统已停止工作”？" },
+        { text: ". Xp系统安装以后，第二次开机后无法打开软件？" },
+        { text: ". 为什么刚下载软件安装后会出现报错？" },
+        { text: ". 开启软件时提示“已经开启不要重复开启”" },
+        { text: ". 为什么点击软件图标却打不开？" },
+        { text: ". 为什么软件老是提示“系统错误”？" },
+        { text: ". 软件使用中突然断网会怎么样？" },
+        { text: ". 断网了还能正常收银吗？" },
+        { text: ". 安装软件时，提示“银豹收银系统已停止工作”？" },
+        { text: ". Xp系统安装以后，第二次开机后无法打开软件？" },
+        {
+          text:
+            ". 为什么登陆时提示“当前程序发生错误，请尝试关闭软件后重试或及时反馈给我们”？"
+        },
+        { text: ". 为什么登录时提示“无法连接远程服务器”？" }
+      ],
+      tabPosition: 'left',      
+      dataproblem: [],
+      index: 0,
+      litel_text: "热点问题"
     };
   },
   methods: {
-  
+    clickfun(e) {
+      this.index = e;
+      console.log(this.index);
+      switch (this.index) {
+        case 1:
+          this.litel_text = "安装、设置与运行";
+          this.dataproblem = this.problem_1;
+          break;
+        case 2:
+          this.litel_text = "登陆、员工与权限";
+          this.dataproblem = this.problem_1;
+          break;
+        case 3:
+          this.litel_text = "收银操作、快捷键";
+          break;
+        case 4:
+          this.litel_text = "硬件相关";
+          break;
+        case 5:
+          this.litel_text = "商品、库存与货流";
+          break;
+        case 6:
+          this.litel_text = "报表、数据与同步";
+          break;
+        case 7:
+          this.litel_text = "促销管理、优惠券";
+          break;
+          this.litel_text = "我的店铺";
+          break;
+        case 8:
+          this.litel_text = "会员管理";
+          break;
+        case 9:
+          this.litel_text = "网店相关";
+          break;
+        default:
+          this.litel_text = "热点问题";
+          this.dataproblem = this.problem;
+      }
+    }
+  },
+  mounted() {
+    this.dataproblem = this.problem;
+    console.log(this.index);
   }
 };
 </script>
@@ -154,8 +240,13 @@ export default {
         padding-left: 32px;
         cursor: pointer;
         &:hover {
-          border-right: 5px solid #1352ae;
+          // border-right: 5px solid #1352ae;
+          // border-bottom: 1px solid #707070;
+          background: #d3d7dc;
         }
+      }
+      .hover {
+        border-right: 5px solid #1352ae;
       }
     }
     .help-right {

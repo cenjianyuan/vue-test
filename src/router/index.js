@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Layout from '@/views/Help' //layout
+import Layout from '@/views/download' //layout
 import login from '@/views/login/login'
 import index from '@/views/index'
 
