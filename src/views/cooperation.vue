@@ -42,7 +42,7 @@ export default {
 }
 .cooperation {
   max-width: 1300px;
-  padding: 200px 0;
+  padding: 100px 0;
   margin: 0 auto;
   box-sizing: border-box;
   color: #434a54;

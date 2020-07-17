@@ -108,7 +108,7 @@
 <style scoped lang="scss">
 .service {
   width: 100%;
-  padding: 200px 0;
+  padding: 100px 0;
   background: #f7fafc;
   .service-wrapper {
     max-width: 1143px;

@@ -12,7 +12,7 @@
 <style scoped lang="scss">
 .download-box {
   width: 100%;
-  padding: 200px 0;
+  padding: 100px 0;
   background: #f5f5f5;
   p {
     text-align: center;

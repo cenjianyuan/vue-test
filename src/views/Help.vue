@@ -216,7 +216,7 @@ export default {
 <style scoped lang="scss">
 .help-box {
   width: 100%;
-  padding: 200px 0;
+  padding: 100px 0;
   background: #f7fafc;
   font-weight: 400;
   font-size: 20px;

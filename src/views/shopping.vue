@@ -16,7 +16,7 @@
 <style scoped lang="scss">
 .shopping-box {
   width: 100%;
-  padding: 200px 0;
+  padding: 100px 0;
   background: #f7fafc;
   .shopping-content {
     max-width: 1300px;

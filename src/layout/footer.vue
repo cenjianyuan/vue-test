@@ -64,9 +64,8 @@
 </script>
 <style scoped lang="scss">
 .footer {
-  background: #1a44ac;
-  height: 596px;
-  padding-top: 250px;
+  height: 410px;
+  padding-top: 136px;
   min-width: 1300px;
 }
 .nav-footer {

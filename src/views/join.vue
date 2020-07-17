@@ -113,7 +113,7 @@
 <style scoped lang="scss">
 .join-box {
   width: 100%;
-  padding: 200px 0;
+  padding: 100px 0;
   background: #f7fafc;
   .join-content {
     max-width: 1300px;
