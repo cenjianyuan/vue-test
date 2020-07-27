@@ -48,7 +48,7 @@ export default {
   background: #f7fafc;
 }
 .cooperation-fanan{
-  margin-bottom: 200px;
+  padding-bottom: 200px;
 }
 .fanan-text {
   font-size: 38px;

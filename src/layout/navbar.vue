@@ -14,7 +14,7 @@
               class="nav"
               @click="mypath(item.page)"
               @mouseenter="enter(item.page)"
-              @mouseleave="leave()"
+              @mouseout="leave()"
             >
               <router-link :to="item.path">{{item.name}}</router-link>
             </li>
@@ -33,7 +33,7 @@
           <p>饭云智能餐饮系统</p>
         </div>
         <div class="content-tow">专注餐饮 | 跨平台 | 云端同步 | 免费使用</div>
-        <div class="content-btn">免费下载</div>
+        <div class="content-btn" @click="mypath(7)">免费下载</div>
         <div class="content-foort">全面支持windows/安卓和iOS</div>
       </div>
       <Program></Program>
@@ -53,7 +53,7 @@
                     <p>电脑也可收银</p>
                   </div>
                   <div class="content-tow">3秒极速支付 聚合微信 支付宝 银联 Apple pay等多种支付方式让账单一目了然</div>
-                  <div class="content-btn">免费下载</div>
+                  <div class="content-btn" @click="mypath(7)">免费下载</div>
                   <div class="content-foort">全面支持windows/安卓和iOS</div>
                 </div>
                 <div class="content-rg">
@@ -71,7 +71,7 @@
                     <p>智能餐饮系统</p>
                   </div>
                   <div class="content-tow">3秒极速支付 聚合微信 支付宝 银联 Apple pay等多种支付方式让账单一目了然</div>
-                  <div class="content-btn">免费下载</div>
+                  <div class="content-btn" @click="mypath(7)">免费下载</div>
                   <div class="content-foort">全面支持windows/安卓和iOS</div>
                 </div>
                 <div class="content-rg">
@@ -89,7 +89,7 @@
                     <p>智能餐饮系统</p>
                   </div>
                   <div class="content-tow">3秒极速支付 聚合微信 支付宝 银联 Apple pay等多种支付方式让账单一目了然</div>
-                  <div class="content-btn">免费下载</div>
+                  <div class="content-btn" @click="mypath(7)">免费下载</div>
                   <div class="content-foort">全面支持windows/安卓和iOS</div>
                 </div>
                 <div class="content-rg">
@@ -107,7 +107,7 @@
                     <p>智能餐饮系统</p>
                   </div>
                   <div class="content-tow">3秒极速支付 聚合微信 支付宝 银联 Apple pay等多种支付方式让账单一目了然</div>
-                  <div class="content-btn">免费下载</div>
+                  <div class="content-btn" @click="mypath(7)">免费下载</div>
                   <div class="content-foort">全面支持windows/安卓和iOS</div>
                 </div>
                 <div class="content-rg">
@@ -136,7 +136,7 @@
                     操作，为您快速提升收银效率。从传统餐饮
                     系统快速转换再无不适感。
                   </div>
-                  <div class="content-btn">饭云智能收银系统</div>
+                  <div class="content-btn" @click="mypath(7)">饭云智能收银系统</div>
                 </div>
                 <div class="content-rg">
                   <div class="demo-image__lazy">
@@ -158,7 +158,7 @@
                     操作，为您快速提升收银效率。从传统餐饮
                     系统快速转换再无不适感。
                   </div>
-                  <div class="content-btn">饭云智能收银系统</div>
+                  <div class="content-btn" @click="mypath(7)">饭云智能收银系统</div>
                 </div>
                 <div class="content-rg">
                   <div class="demo-image__lazy">
@@ -180,7 +180,7 @@
                     操作，为您快速提升收银效率。从传统餐饮
                     系统快速转换再无不适感。
                   </div>
-                  <div class="content-btn">饭云智能收银系统</div>
+                  <div class="content-btn" @click="mypath(7)">饭云智能收银系统</div>
                 </div>
                 <div class="content-rg">
                   <div class="demo-image__lazy">
@@ -202,7 +202,7 @@
                     操作，为您快速提升收银效率。从传统餐饮
                     系统快速转换再无不适感。
                   </div>
-                  <div class="content-btn">饭云智能收银系统</div>
+                  <div class="content-btn" @click="mypath(7)">饭云智能收银系统</div>
                 </div>
                 <div class="content-rg">
                   <div class="demo-image__lazy">
@@ -226,7 +226,7 @@
               能处理各项经营场景和找出经营不足，业绩也明显提升
               当然大家才更爱用
             </div>
-            <div class="content-btn">免费注册</div>
+            <div class="content-btn" @click="mypath(7)">免费注册</div>
           </div>
           <div class="content-rg">
             <div class="demo-image__lazy">
@@ -242,7 +242,7 @@
               <p>加入饭云</p>
               <p>为智能餐饮贡献智慧</p>
             </div>
-            <div class="content-btn">我要加入</div>
+            <div class="content-btn" @click="mypath(7)">我要加入</div>
           </div>
           <div class="content-rg">
             <div class="demo-image__lazy">
@@ -282,7 +282,7 @@
                     <p>电脑也可收银</p>
                   </div>
                   <div class="content-tow">3秒极速支付 聚合微信 支付宝 银联 Apple pay等多种支付方式让账单一目了然</div>
-                  <div class="content-btn">免费下载</div>
+                  <div class="content-btn" @click="mypath(7)">免费下载</div>
                   <div class="content-foort">全面支持windows/安卓和iOS</div>
                 </div>
                 <div class="content-rg">
@@ -300,7 +300,7 @@
                     <p>智能餐饮系统</p>
                   </div>
                   <div class="content-tow">3秒极速支付 聚合微信 支付宝 银联 Apple pay等多种支付方式让账单一目了然</div>
-                  <div class="content-btn">免费下载</div>
+                  <div class="content-btn" @click="mypath(7)">免费下载</div>
                   <div class="content-foort">全面支持windows/安卓和iOS</div>
                 </div>
                 <div class="content-rg">
@@ -318,7 +318,7 @@
                     <p>智能餐饮系统</p>
                   </div>
                   <div class="content-tow">3秒极速支付 聚合微信 支付宝 银联 Apple pay等多种支付方式让账单一目了然</div>
-                  <div class="content-btn">免费下载</div>
+                  <div class="content-btn" @click="mypath(7)">免费下载</div>
                   <div class="content-foort">全面支持windows/安卓和iOS</div>
                 </div>
                 <div class="content-rg">
@@ -336,7 +336,7 @@
                     <p>智能餐饮系统</p>
                   </div>
                   <div class="content-tow">3秒极速支付 聚合微信 支付宝 银联 Apple pay等多种支付方式让账单一目了然</div>
-                  <div class="content-btn">免费下载</div>
+                  <div class="content-btn" @click="mypath(7)">免费下载</div>
                   <div class="content-foort">全面支持windows/安卓和iOS</div>
                 </div>
                 <div class="content-rg">
@@ -367,7 +367,7 @@
                     <p>电脑也可收银</p>
                   </div>
                   <div class="content-tow">3秒极速支付 聚合微信 支付宝 银联 Apple pay等多种支付方式让账单一目了然</div>
-                  <div class="content-btn">免费下载</div>
+                  <div class="content-btn" @click="mypath(7)">免费下载</div>
                   <div class="content-foort">全面支持windows/安卓和iOS</div>
                 </div>
                 <div class="content-rg">
@@ -385,7 +385,7 @@
                     <p>智能餐饮系统</p>
                   </div>
                   <div class="content-tow">3秒极速支付 聚合微信 支付宝 银联 Apple pay等多种支付方式让账单一目了然</div>
-                  <div class="content-btn">免费下载</div>
+                  <div class="content-btn" @click="mypath(7)">免费下载</div>
                   <div class="content-foort">全面支持windows/安卓和iOS</div>
                 </div>
                 <div class="content-rg">
@@ -403,7 +403,7 @@
                     <p>智能餐饮系统</p>
                   </div>
                   <div class="content-tow">3秒极速支付 聚合微信 支付宝 银联 Apple pay等多种支付方式让账单一目了然</div>
-                  <div class="content-btn">免费下载</div>
+                  <div class="content-btn" @click="mypath(7)">免费下载</div>
                   <div class="content-foort">全面支持windows/安卓和iOS</div>
                 </div>
                 <div class="content-rg">
@@ -421,7 +421,7 @@
                     <p>智能餐饮系统</p>
                   </div>
                   <div class="content-tow">3秒极速支付 聚合微信 支付宝 银联 Apple pay等多种支付方式让账单一目了然</div>
-                  <div class="content-btn">免费下载</div>
+                  <div class="content-btn" @click="mypath(7)">免费下载</div>
                   <div class="content-foort">全面支持windows/安卓和iOS</div>
                 </div>
                 <div class="content-rg">
@@ -508,7 +508,8 @@ export default {
       let show_id = document.getElementsByClassName("section")[0];
       let program = document.getElementsByClassName("program")[0];
       let footer = document.getElementsByClassName("footer")[0];
-
+      let nav_2 = document.getElementsByClassName("nav")[1];
+      let nav_3 = document.getElementsByClassName("nav")[2];
       if (page == 0) {
         this.headclass = "";
         show_id.className = "section ht_1";
@@ -520,12 +521,16 @@ export default {
         show_id.className = "section ht_2";
         program.className = "program ht_2";
         footer.className = "footer head_1";
+        nav_2.className = "nav hover hover_" + this.page_num;
+        nav_3.className = "nav";
       }
       if (page == 2) {
         this.headclass = "head_2";
         show_id.className = "section ht_3";
         program.className = "program ht_3";
         footer.className = "footer head_2";
+        nav_2.className = "nav";
+        nav_3.className = "nav hover hover_" + this.page_num;
       }
       if (page == 3) {
         this.headclass = "head_3";
@@ -589,7 +594,7 @@ export default {
       }
     },
     leave() {
-      // console.log("移除");
+
     }
   },
 
